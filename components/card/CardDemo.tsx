@@ -42,6 +42,7 @@ export default function CardDemo() {
             color: "bg-[#042c7c]",
             fg: "text-white",
             fill: "fill-[#042c7c]",
+            fillText: "text-[#042c7c]",
             buttonText: "Done",
             children: (
                 <div className='w-64 h-32 rounded-md overflow-hidden'>

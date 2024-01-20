@@ -8,6 +8,7 @@ export default function CardHeader({
     bio = siteConfig.cardDefaults.bio,
     socials = true,
     fill = "fill-black",
+    fillText = "fill-black",
     children
 } : {
     className?: String,
@@ -18,6 +19,7 @@ export default function CardHeader({
     bio?: String,
     socials?: Boolean,
     fill?: String,
+    fillText?: String,
     children?: React.ReactNode
 }) {
 
@@ -49,7 +51,7 @@ export default function CardHeader({
 
             {
                 socials && (
-                    <div id="social" className={`flex gap-2 items-center ${fill}`}>
+                    <div id="social" className={`flex gap-2 items-center ${fill} ${fillText}`}>
                         <div className="flex w-[30px] h-[30px] items-center justify-center hover:scale-105">
                             <a target="_blank" className="social_link" aria-label="Visit tiktok at https://tiktok.com/demo" href="https://tiktok.com/demo">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30px" height="30px">

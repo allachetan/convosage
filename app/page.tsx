@@ -10,7 +10,7 @@ import Card from '@/components/Card';
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center min-h-screen justify-start bg-white text-black">
+    <main className="flex flex-col items-center min-h-screen justify-start bg-white text-black !scroll-smooth">
 
       <Nav />
 
@@ -27,7 +27,7 @@ export default function Home() {
       </div>
 
       {/* feature sections */}
-      <div className='flex flex-col p-8 py-16 gap-16 max-w-7xl w-full'>
+      <div id="features" className='flex flex-col p-8 py-16 gap-16 max-w-7xl w-full'>
 
         {/* frictionless leads */}
         <Feature reverse={true} title={siteConfig.feature1} desc={siteConfig.feature1Desc}>
@@ -43,7 +43,17 @@ export default function Home() {
 
         {/* All your socials */}
         <Feature reverse={false} title={siteConfig.feature2} desc={siteConfig.feature2Desc}>
-          <CardHeader className='rounded-md shadow-lg' bg="bg-white" />
+          <CardHeader className='rounded-md shadow-lg' bg="bg-white">
+            <div className='w-32 h-32 rounded-full bg-gray-400 overflow-hidden'>
+              <img
+                src={siteConfig.cardDefaults.pfp}
+                width={256}
+                height={256}
+                className='object-cover h-full w-full'
+                alt="Picture of the contact"
+              />
+            </div>
+          </CardHeader>
         </Feature>
 
         {/* easy install */}
@@ -53,7 +63,7 @@ export default function Home() {
       </div>
 
       {/* faq section */}
-      <div className="bg-white max-w-7xl">
+      <div id="faq" className="bg-white max-w-7xl -mt-8">
         <div className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
           <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">Frequently asked questions</h2>
           <p className="mt-6 max-w-2xl text-base leading-7 text-gray-600">{siteConfig.faqDesc}</p>
@@ -83,6 +93,8 @@ export default function Home() {
           <p className='text-xs ml-auto'>© 2024 Convosage</p>
         </div>
       </div>
+
+      <div className='w-full h-16 sm:h-0'/>
     </main>
   )
 }

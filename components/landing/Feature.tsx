@@ -6,7 +6,7 @@ export default function Feature({ reverse = false, title = '' , desc = '', child
   }) {
     
     return (
-        <div className={`flex flex-col md:flex-row${reverse ? "-reverse" : ""} gap-8`}>
+        <div className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} gap-8`}>
             <div className='flex-1 flex flex-col justify-center items-start gap-2'>
                 <h2 className='text-4xl md:text-5xl font-medium'>{title}</h2>
                 <p className='text-xl'>{desc}</p>
