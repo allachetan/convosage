@@ -57,7 +57,7 @@ export default function CardDemo() {
             )
         }
     ]
-    const [index, setIndex] = useState(2);
+    const [index, setIndex] = useState(1);
     let indexRef = useRef(0);
 
     useEffect(() => {
