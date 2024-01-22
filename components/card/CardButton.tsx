@@ -1,22 +1,35 @@
-export default function CardButton({
+import React, { forwardRef, ReactNode } from 'react';
+
+interface CardButtonProps {
+    text: string;
+    bg?: string;
+    fg?: string;
+    className?: string;
+    hover?: Boolean
+    children?: ReactNode;
+    oc?: () => void;
+}
+
+
+const CardButton = forwardRef<HTMLButtonElement, CardButtonProps>(({
     text,
     bg = "bg-black",
     fg = "text-white",
     className = "",
+    hover = false,
     children,
     oc
-} : {
-    text: String,
-    bg?: String,
-    fg?: String,
-    className?: String,
-    children?: React.ReactNode,
-    oc?: ()=>void
-}) {
+}, ref) => {
     return (
-        <button className={`w-full ${bg} flex gap-2 items-center justify-center ${fg} p-3 px-6 pr-7 rounded-full md:hover:scale-95 shadow-md ` + className} onClick={oc}>
+        <button 
+            ref={ref} 
+            className={`${bg} flex gap-2 items-center justify-center ${fg} p-3 px-6 pr-7 rounded-full ${hover ? "hover:scale-95 " : ""}shadow-md ${className}`} 
+            onClick={oc}
+        >
             {children}
-            <p>{text}</p>
+            <p className="text-nowrap whitespace-nowrap">{text}</p>
         </button>
-    )
-}
+    );
+});
+
+export default CardButton;

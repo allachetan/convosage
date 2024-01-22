@@ -7,14 +7,16 @@ import CardFooter from '@/components/card/CardFooter';
 import CardButton from '@/components/card/CardButton';
 import CardDemo from '@/components/card/CardDemo';
 import Card from '@/components/Card';
+import Loader from '@/components/Loader';
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen justify-start bg-white text-black !scroll-smooth">
-
+      
+      {/* <iframe src="/card" className='w-full h-full fixed top-0 right-0 z-[1000]' /> */}
+      <Loader />
       <Nav />
 
-      <Card />
       {/* hero */}
       <div className="px-4 py-12 lg:pr-16 w-full max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-6 justify-center items-center">
