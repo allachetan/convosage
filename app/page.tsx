@@ -14,7 +14,6 @@ export default function Home() {
     <main className="flex flex-col items-center min-h-screen justify-start bg-white text-black !scroll-smooth">
       
       {/* <iframe src="/card" className='w-full h-full fixed top-0 right-0 z-[1000]' /> */}
-      <Loader />
       <Nav />
 
       {/* hero */}

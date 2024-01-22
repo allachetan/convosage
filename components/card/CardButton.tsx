@@ -23,7 +23,7 @@ const CardButton = forwardRef<HTMLButtonElement, CardButtonProps>(({
     return (
         <button 
             ref={ref} 
-            className={`${bg} flex gap-2 items-center justify-center ${fg} p-3 px-6 pr-7 rounded-full ${hover ? "hover:scale-95 " : ""}shadow-md ${className}`} 
+            className={`${bg} flex gap-2 items-center justify-center ${fg} p-3 px-6 pr-7 rounded-full active:scale-95 ${hover ? "hover:ring hover:ring-stone-400 " : ""}shadow-md ${className}`} 
             onClick={oc}
         >
             {children}

@@ -19,7 +19,7 @@ export default function CardDemo() {
             color: "bg-black",
             fg: "text-white",
             fill: "fill-black",
-            buttonText: "X",
+            buttonText: "Done",
             children: (
                 <div className='w-32 h-32 rounded-full bg-gray-400 overflow-hidden'>
                     <img
@@ -61,16 +61,19 @@ export default function CardDemo() {
     let indexRef = useRef(0);
 
     useEffect(() => {
-        setInterval(() => {
+        const rotating = setInterval(() => {
             indexRef.current += 1;
             setIndex(indexRef.current);
         }, 3000);
 
+        return () => {
+            clearInterval(rotating);
+        };
     }, []);
 
 
     return (
-        <div className={`w-full min-h-[534px] max-w-xs flex flex-col justify-center gap-2`}>
+        <div className={`w-full min-h-[560px] max-w-xs flex flex-col justify-center gap-2`}>
             <div className='w-full flex flex-col rounded-md shadow-[0px_0px_10px_rgba(0,0,0,0.1)]'>
                 <CardHeader {...demos[index % demos.length]} />
                 <CardFooter />

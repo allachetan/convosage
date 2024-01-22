@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RequestButton from "./RequestButton";
 
 export default function Nav() {
   return (
@@ -12,11 +13,7 @@ export default function Nav() {
           <p className="text-md">Faq</p>
         </Link>
         <div className='w-full' />
-        <button
-          className="bg-black text-white py-1.5 px-4 rounded-md justify-self-end sm:hover:scale-105"
-        >
-          <p className="text-md text-nowrap whitespace-nowrap">Request Yours</p>
-        </button>
+        <RequestButton />
       </div>
     </nav>
   )

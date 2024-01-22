@@ -39,16 +39,25 @@ export default function Card() {
     // Send the scroll height to the parent window
     const sendScrollHeight = () => {
         const height = cardRef.current?.scrollHeight;
-        const width = buttonRef.current?.offsetWidth + 10;
+        const width = cardRef.current?.offsetWidth;
         window.top.postMessage({height: height, width: width}, '*');
     };
 
+    const sendOpenedStatus = (newOpened) => {
+        window.top.postMessage({opened: newOpened}, "*");
+    }
+
     const handleMessage = (event) => {
         if (event.data) {
-            if (event.data.contactCardChangeOpen) {
-                setOpened(event.data.contactCardChangeOpen == "true" ? true : false);
+            if ("contactCardSetOpen" in event.data) {
+                setOpened(event.data.contactCardSetOpen);
+                sendOpenedStatus(event.data.contactCardSetOpen);
             }
         }
+    };
+
+    const updateParentWidth = () => {
+        setParentWidth(parent.window.visualViewport.width);
     };
 
     useEffect(() => {
@@ -65,18 +74,20 @@ export default function Card() {
 
         window.addEventListener('message', handleMessage);
 
-        setParentWidth(parent.window.visualViewport.width);
+        updateParentWidth();
+        parent.window.addEventListener('resize', updateParentWidth);
 
         return () => {
             if (cardRef.current) {
                 resizeObserver.unobserve(cardRef.current);
             }
             window.removeEventListener('message', handleMessage);
+            parent.window.removeEventListener('resize', updateParentWidth);
         };
     }, []);
 
     return (
-        <div ref={cardRef} id="contact-card" className={"fixed bottom-0 right-0 gap-3 z-50 sm:gap-2 flex flex-col justify-end items-end p-1 w-full"} >
+        <div ref={cardRef} className={`fixed bottom-0 right-0 gap-3 z-50 sm:gap-2 flex flex-col justify-end items-end p-1 w-full`} >
 
             <Transition
                 show={opened}
@@ -94,10 +105,11 @@ export default function Card() {
                 </div>
             </Transition>
 
-            <CardButton ref={buttonRef} text={opened ? "Done" : "Request Yours"} className={opened ? "w-full" : (parentWidth <= 640 ? "w-full" : "w-fit")} oc={() => {
+            <CardButton ref={buttonRef} text={opened ? "Done" : "Request Yours"} className={opened ? "w-full" : (parentWidth <= 640 ? "w-full ring ring-stone-600" : "w-fit ring ring-stone-600")} oc={() => {
                 setOpened(!opened);
+                sendOpenedStatus(!opened);
             }}
-                hover={parentWidth > 640}
+                hover={!opened && parentWidth > 640}
             >
                 <Transition
                     show={!opened}
