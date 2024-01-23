@@ -2,17 +2,18 @@ import Image from 'next/image'
 import Nav from '@/components/landing/Nav';
 import siteConfig from '@/siteConfig';
 import Feature from '@/components/landing/Feature';
-import CardHeader from '@/components/card/CardHeader';
+import CardHeader from '@/components/card/CardHeaderRemastered';
 import CardFooter from '@/components/card/CardFooter';
-import CardButton from '@/components/card/CardButton';
+import CardButton from '@/components/card/CardButtonRemastered';
 import CardDemo from '@/components/card/CardDemo';
 import Card from '@/components/Card';
 import Loader from '@/components/Loader';
+import { Zap } from 'lucide-react';
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen justify-start bg-white text-black !scroll-smooth">
-      
+
       {/* <iframe src="/card" className='w-full h-full fixed top-0 right-0 z-[1000]' /> */}
       <Nav />
 
@@ -35,8 +36,8 @@ export default function Home() {
           <div className='w-full max-w-xs flex flex-col justify-center gap-2'>
 
             <CardFooter roundedTop={true} className={"rounded-md shadow-md"} />
-            <CardButton text="Work with me">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+            <CardButton text="Work with me" >
+              <Zap width="18" height="18" />
             </CardButton>
 
           </div>
@@ -44,17 +45,26 @@ export default function Home() {
 
         {/* All your socials */}
         <Feature reverse={false} title={siteConfig.feature2} desc={siteConfig.feature2Desc}>
-          <CardHeader className='rounded-md shadow-lg' bg="bg-white">
-            <div className='w-32 h-32 rounded-full bg-gray-400 overflow-hidden'>
-              <img
-                src={siteConfig.cardDefaults.pfp}
-                width={256}
-                height={256}
-                className='object-cover h-full w-full'
-                alt="Picture of the contact"
-              />
-            </div>
-          </CardHeader>
+          <CardHeader
+            headerStyle={
+              {
+                backgroundColor: "#FFFFFF",
+                borderRadius: "0.375rem",
+                boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)"
+              } as any
+            }
+            header={
+              <div className='w-32 h-32 rounded-full bg-gray-400 overflow-hidden'>
+                <img
+                  src={siteConfig.cardDefaults.pfp}
+                  width={256}
+                  height={256}
+                  className='object-cover h-full w-full'
+                  alt="Picture of the contact"
+                />
+              </div>
+            }
+          />
         </Feature>
 
         {/* easy install */}
@@ -95,7 +105,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='w-full h-16 sm:h-0'/>
+      <div className='w-full h-16 sm:h-0' />
     </main>
   )
 }

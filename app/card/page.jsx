@@ -2,21 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Transition } from '@headlessui/react';
-import CardHeader from '@/components/card/CardHeader';
+import CardHeader from '@/components/card/CardHeaderRemastered';
 import CardFooter from '@/components/card/CardFooter';
-import CardButton from '@/components/card/CardButton';
+import CardButton from '@/components/card/CardButtonRemastered';
+import { Zap } from "lucide-react";
 
 const cardInfo = {
-    className: "w-full",
-    bg: "bg-slate-100",
+    // card header config
+    headerStyle: {
+        backgroundColor: "#f1f5f9"
+    },
     name: "Chetan Alla",
     location: "Centreville, VA",
     bio: "Amazon Dev, Founder & CEO of Convosage",
-    socials: false,
-    color: "bg-black",
-    fg: "text-white",
-    buttonText: "Done",
-    children: (
+    header: (
         <div className='w-32 h-32 rounded-full shadow-sm overflow-hidden'>
             <img
                 src="/pfp.jpg"
@@ -27,24 +26,23 @@ const cardInfo = {
             />
         </div>
     )
-};
+}
 
 export default function Card() {
 
     const [opened, setOpened] = useState(false);
     const [parentWidth, setParentWidth] = useState(0);
     const cardRef = useRef(null);
-    const buttonRef = useRef(null);
 
     // Send the scroll height to the parent window
     const sendScrollHeight = () => {
         const height = cardRef.current?.scrollHeight;
         const width = cardRef.current?.offsetWidth;
-        window.top.postMessage({height: height, width: width}, '*');
+        window.top.postMessage({ height: height, width: width }, '*');
     };
 
     const sendOpenedStatus = (newOpened) => {
-        window.top.postMessage({opened: newOpened}, "*");
+        window.top.postMessage({ opened: newOpened }, "*");
     }
 
     const handleMessage = (event) => {
@@ -105,11 +103,20 @@ export default function Card() {
                 </div>
             </Transition>
 
-            <CardButton ref={buttonRef} text={opened ? "Done" : "Request Yours"} className={opened ? "w-full" : (parentWidth <= 640 ? "w-full ring ring-stone-600" : "w-fit ring ring-stone-600")} oc={() => {
-                setOpened(!opened);
-                sendOpenedStatus(!opened);
-            }}
-                hover={!opened && parentWidth > 640}
+            <CardButton
+                id="cardButton"
+                text={opened ? "Done" : "Request Yours"}
+                buttonStyle={{
+                    backgroundColor: "#000",
+                    color: "#FFFFFF",
+                    "--tw-ring-color": "#57534e",
+                    width: opened ? "100%" : (parentWidth <= 640 ? "100%" : "fit-content")
+                }}
+                oc={() => {
+                    setOpened(!opened);
+                    sendOpenedStatus(!opened);
+                }}
+                ring={!opened}
             >
                 <Transition
                     show={!opened}
@@ -117,7 +124,7 @@ export default function Card() {
                     enterFrom="opacity-0"
                     enterTo=""
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+                    <Zap width="18" height="18" />
                 </Transition>
             </CardButton >
 
