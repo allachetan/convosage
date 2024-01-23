@@ -8,10 +8,12 @@ import CardButton from '@/components/card/CardButton';
 import CardDemo from '@/components/card/CardDemo';
 import Card from '@/components/Card';
 import { Zap } from 'lucide-react';
+import Script from 'next/script';
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen justify-start bg-white text-black !scroll-smooth">
+      <Script async id="csinjector" src="/injectcard.js" data-zindex="999" />
 
       {/* <iframe src="/card" className='w-full h-full fixed top-0 right-0 z-[1000]' /> */}
       <Nav />
@@ -34,7 +36,9 @@ export default function Home() {
         <Feature reverse={true} title={siteConfig.feature1} desc={siteConfig.feature1Desc}>
           <div className='w-full max-w-xs flex flex-col justify-center gap-2'>
 
-            <CardFooter roundedTop={true} className={"rounded-md shadow-md"} />
+            <CardFooter roundedTop={true} className={"rounded-md shadow-md"}
+              tel={siteConfig.cardDefaults.number} sms={siteConfig.cardDefaults.number} email={siteConfig.cardDefaults.email} vcf={"chetanalla.vcf"}
+            />
             <CardButton text="Work with me" >
               <Zap width="18" height="18" />
             </CardButton>
@@ -52,6 +56,13 @@ export default function Home() {
                 boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)"
               } as any
             }
+            social={{
+              tiktok: "https://www.tiktok.com",
+              twitter: "https://www.twitter.com",
+              instagram: "https://www.instagram.com",
+              facebook: "https://www.facebook.com",
+              maps: "https://www.google.com/maps"
+            }}
             header={
               <div className='w-32 h-32 rounded-full bg-gray-400 overflow-hidden'>
                 <img

@@ -16,7 +16,6 @@ export default function CardDemo() {
             name: "Jessica Davis",
             location: siteConfig.cardDefaults.location,
             bio: "Top 5% RE/MAX agent in Fairfax",
-            socials: true,
             socialsIconStyle: {
                 fill: "#000"
             },
@@ -36,6 +35,17 @@ export default function CardDemo() {
                 color: "#FFFFFF"
             },
             buttonText: "Done",
+            tel: siteConfig.cardDefaults.number,
+            sms: siteConfig.cardDefaults.number,
+            email: siteConfig.cardDefaults.email,
+            vcf: "chetanalla.vcf",
+            social: {
+                tiktok: "https://www.tiktok.com",
+                twitter: "https://www.twitter.com",
+                instagram: "https://www.instagram.com",
+                facebook: "https://www.facebook.com",
+                maps: "https://www.google.com/maps"
+            }
         },
         {
             headerStyle: {
@@ -44,7 +54,6 @@ export default function CardDemo() {
             name: "",
             location: siteConfig.cardDefaults.location,
             bio: "Quick, quality fixes for every drip, leak, and clog.",
-            socials: true,
             socialsIconStyle: {
                 fill: "#042c7c",
                 color: "#042c7c"
@@ -64,7 +73,18 @@ export default function CardDemo() {
                 backgroundColor: "#042c7c",
                 color: "#FFFFFF"
             },
-            buttonText: "Done"
+            buttonText: "Done",
+            tel: siteConfig.cardDefaults.number,
+            sms: siteConfig.cardDefaults.number,
+            email: siteConfig.cardDefaults.email,
+            vcf: "chetanalla.vcf",
+            social: {
+                tiktok: "https://www.tiktok.com",
+                twitter: "https://www.twitter.com",
+                instagram: "https://www.instagram.com",
+                facebook: "https://www.facebook.com",
+                maps: "https://www.google.com/maps"
+            }
         }
     ]
 
@@ -87,11 +107,11 @@ export default function CardDemo() {
         <div className={`w-full min-h-[560px] min-w-[320px] max-w-xs flex flex-col justify-center gap-2`}>
             <div className='w-full flex flex-col rounded-md shadow-[0px_0px_10px_rgba(0,0,0,0.1)]'>
                 <CardHeader {...demos[index % demos.length]} />
-                <CardFooter />
+                <CardFooter {...demos[index % demos.length]} />
             </div>
 
-            <CardButton 
-                text={demos[index % demos.length].buttonText} 
+            <CardButton
+                text={demos[index % demos.length].buttonText}
                 buttonStyle={demos[index % demos.length].buttonStyle as any}
             />
         </div>
