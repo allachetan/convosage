@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script src="/injectcard.js" />
+      <Script id="csinjector" src="/injectcard.js" data-zindex="999" />
       <body className={inter.className}>
         {children}
       </body>

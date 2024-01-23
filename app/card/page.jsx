@@ -86,6 +86,14 @@ export default function Card() {
 
     return (
         <div ref={cardRef} className={`fixed bottom-0 right-0 gap-3 z-50 sm:gap-2 flex flex-col justify-end items-end p-1 w-full`} >
+            <Transition
+                show={!opened}
+                enter="transition delay-150"
+                enterFrom="opacity-0"
+                enterTo=""
+            >
+                <img src="/tryicon.png" className="h-16 animate-bounce mt-3 opacity-95 -mb-2" />
+            </Transition>
 
             <Transition
                 show={opened}

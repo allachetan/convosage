@@ -39,15 +39,21 @@
 
     // Function to dynamically create and insert the iframe
     function injectCard() {
+        const script = document.getElementById("csinjector");
+        const zinval = script.getAttribute('data-zindex');
+        const zIndex = isNaN(zinval) ? 999 : parseInt(zinval);
+
         const iframe = document.createElement('iframe');
         iframe.id = 'contact-card';
         iframe.src = '/card';
         iframe.style.height = '0px';
+        iframe.style.zIndex = `${zIndex + 1}`;
         document.body.appendChild(iframe);
 
         const bgblur = document.createElement('div');
         bgblur.id = 'contact-card-backdrop';
         bgblur.style.display = 'none';
+        bgblur.style.zIndex = `${zIndex}`;
         document.body.appendChild(bgblur);
 
         let opened = false;

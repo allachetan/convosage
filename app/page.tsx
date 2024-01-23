@@ -17,7 +17,7 @@ export default function Home() {
       <Nav />
 
       {/* hero */}
-      <div className="px-4 py-12 lg:pr-16 w-full max-w-7xl">
+      <div className="px-4 py-12 lg:pr-12 w-full max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-6 justify-center items-center">
           <div className='flex flex-col gap-3'>
             <p className='text-5xl md:text-7xl lg:text-8xl'>{siteConfig.hook}</p>

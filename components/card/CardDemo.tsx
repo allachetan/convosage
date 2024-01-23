@@ -84,7 +84,7 @@ export default function CardDemo() {
 
 
     return (
-        <div className={`w-full min-h-[560px] max-w-xs flex flex-col justify-center gap-2`}>
+        <div className={`w-full min-h-[560px] min-w-[320px] max-w-xs flex flex-col justify-center gap-2`}>
             <div className='w-full flex flex-col rounded-md shadow-[0px_0px_10px_rgba(0,0,0,0.1)]'>
                 <CardHeader {...demos[index % demos.length]} />
                 <CardFooter />
