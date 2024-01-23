@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Transition } from '@headlessui/react';
-import CardHeader from '@/components/card/CardHeaderRemastered';
+import CardHeader from '@/components/card/CardHeader';
 import CardFooter from '@/components/card/CardFooter';
-import CardButton from '@/components/card/CardButtonRemastered';
+import CardButton from '@/components/card/CardButton';
 import { Zap } from "lucide-react";
 
 const cardInfo = {

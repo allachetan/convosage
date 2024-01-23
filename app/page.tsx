@@ -2,12 +2,11 @@ import Image from 'next/image'
 import Nav from '@/components/landing/Nav';
 import siteConfig from '@/siteConfig';
 import Feature from '@/components/landing/Feature';
-import CardHeader from '@/components/card/CardHeaderRemastered';
+import CardHeader from '@/components/card/CardHeader';
 import CardFooter from '@/components/card/CardFooter';
-import CardButton from '@/components/card/CardButtonRemastered';
+import CardButton from '@/components/card/CardButton';
 import CardDemo from '@/components/card/CardDemo';
 import Card from '@/components/Card';
-import Loader from '@/components/Loader';
 import { Zap } from 'lucide-react';
 
 export default function Home() {
