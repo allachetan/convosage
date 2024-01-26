@@ -4,13 +4,13 @@ const siteConfig = {
     subHook: "We screen your customers for good experiences and follow up asking for a review. Rank higher online and get more customers than ever before, without lifting a finger.",
 
     feature1: "Stop Bad Reviews",
-    feature1Desc: "We display a pre-screen where customers with a poor experience will give you feedback directly instead of on online profiles.",
+    feature1Desc: "We identify customers with poor experiences using a pre-screen. They give negative feedback privatly instead of on your social profiles.",
 
     feature2: "Frictionless 3rd Party Reviews",
-    feature2Desc: "After passing the sreening, we make it as frictionless as possible to review you on third party platforms like Google, Yelp, and Meta(Facebook).",
+    feature2Desc: "Customers who have a good experience can use direct links to write a review on all your online profiles.",
 
     feature3: "Effortless Integration",
-    feature3Desc: "We integrate our service with any customer management platform (even Google Sheets / Excel). No need to worry about how you store your customer info, we never send duplicate review requests.",
+    feature3Desc: "We integrate our service with any customer management platform (even Google Sheets / Excel). As long as you have the information somewhere, we make it work.",
 
     faqDesc: "Have a different question and can’t find the answer you’re looking for? Reach out to us below, and we will get back to you shortly.",
     faq: [
@@ -20,7 +20,7 @@ const siteConfig = {
         },
         {
             title: "How does the screening process work before asking for reviews?",
-            desc: "We ask your customers to rate your service 0-10 on our hosted site. This way we won't show them review links, and instead have them submit feedback privatly on our website intead of Google or Yelp."
+            desc: "We ask your customers to rate your service 0-10 on our hosted site. We show direct review links to customers who rate your service highly, and a form to submit feedback privatly to others."
         },
         {
             title: "Is the integration process complicated?",

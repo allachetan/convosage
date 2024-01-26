@@ -12,7 +12,7 @@ export default function RequestButton() {
                 }
             }}
         >
-            <p className="text-md text-nowrap whitespace-nowrap">Request Yours</p>
+            <p className="text-md text-nowrap whitespace-nowrap">Work With Us</p>
         </button>
     )
 }

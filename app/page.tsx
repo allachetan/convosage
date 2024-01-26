@@ -140,8 +140,6 @@ export default function Home() {
       <div className="border-t border-black flex justify-center w-full">
         <div className='max-w-7xl px-4 py-8 flex gap-4 items-center w-full'>
           <p className="text-2xl mr-2 text-bold">Convosage</p>
-          <p className='text-xs'>privacy</p>
-          <p className='text-xs'>terms</p>
           <p className='text-xs ml-auto'>© 2024 Convosage</p>
         </div>
       </div>
