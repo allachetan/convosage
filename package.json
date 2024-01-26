@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "lucide-react": "^0.314.0",
     "next": "14.0.4",
     "next-query-params": "^5.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7",
     "use-query-params": "^2.2.1",
     "vcards-js": "^2.10.0"
   },

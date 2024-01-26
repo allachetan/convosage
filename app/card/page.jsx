@@ -181,15 +181,36 @@ export default function Card() {
                 leaveTo="scale-y-50 translate-y-32 opacity-0"
                 className="w-full"
             >
-                <div className='w-full flex flex-col rounded-md shadow-md shadow-slate-400'>
-                    <CardHeader {...cardInfo} />
-                    <CardFooter {...cardInfo} />
-                </div>
+                <form 
+                    className='w-full flex flex-col gap-2 rounded-md shadow-md shadow-slate-400 bg-white p-6 py-8'
+                    action="https://api.web3forms.com/submit" method="POST"
+                >
+                    <input type="hidden" name="access_key" value="4c5d1e36-b99b-4757-a564-a008239c6a5b"></input>
+                    <input type="hidden" name="redirect" value="/card"></input>
+                    
+                    <h1 className="text-4xl font-semibold mb-4 text-center">Let's boost your online ratings.</h1>
+                    <div>
+                        <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+                        <input type="email" id="email" name="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@company.com" required />
+                    </div>
+
+                    <div>
+                        <label for="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Website</label>
+                        <input type="text" id="subject" name="website" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="https://www.google.com" required />
+                    </div>
+
+                    <div>
+                        <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tell us about your business</label>
+                        <textarea id="message" rows="6" name="message" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder=""></textarea>
+                    </div>
+
+                    <button type="submit" className="mt-2 py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-black">Submit</button>
+                </form>
             </Transition>
 
             <CardButton
                 id="cardButton"
-                text={opened ? cardInfo.buttonTextOpened : cardInfo.buttonTextClosed}
+                text={opened ? "Close" : "Work with us"}
                 buttonStyle={{
                     width: opened ? "100%" : (parentWidth <= 640 ? "100%" : "fit-content"),
                     ...cardInfo.buttonStyle

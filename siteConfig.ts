@@ -1,42 +1,42 @@
 const siteConfig = {
 
-    hook: "A Simple Way to Boost Leads on Your Website.",
-    subHook: "We build embeded contact cards for your website. Make the most important part of your site always visible and frictionless, turning visitors into leads.",
+    hook: "Rank higher on Google and Yelp.",
+    subHook: "We screen your customers for good experiences and follow up asking for a review. Rank higher online and get more customers than ever before, without lifting a finger.",
 
-    feature1: "Frictionless Leads",
-    feature1Desc: "Give visitors a way to contact you with a single tap. No more copying and pasting phone numbers, email addresses, or even manually creating contacts!",
+    feature1: "Stop Bad Reviews",
+    feature1Desc: "We display a pre-screen where customers with a poor experience will give you feedback directly instead of on online profiles.",
 
-    feature2: "Direct & Personal",
-    feature2Desc: "Connect with your visitors on a personal level with a down-to-earth interface that packs all the functionality you need.",
+    feature2: "Frictionless 3rd Party Reviews",
+    feature2Desc: "After passing the sreening, we make it as frictionless as possible to review you on third party platforms like Google, Yelp, and Meta(Facebook).",
 
     feature3: "Effortless Integration",
-    feature3Desc: "Embed into any site, even ones built on website builders like Wix. Still need help? Our experts will install it for you, free of charge!",
+    feature3Desc: "We integrate our service with any customer management platform (even Google Sheets / Excel). No need to worry about how you store your customer info, we never send duplicate review requests.",
 
-    faqDesc: "Have a different question and can’t find the answer you’re looking for? Reach out using our contact card, and we will get back to you shortly.",
+    faqDesc: "Have a different question and can’t find the answer you’re looking for? Reach out to us below, and we will get back to you shortly.",
     faq: [
         {
-            title: "How much does the widget cost?",
-            desc: "It's free during our beta phase. Early adopters won't be charged as we refine and improve the product."
+            title: "What platforms can I collect reviews on?",
+            desc: "We will work with your business to integrate with any platforms of your choice such as Google, Facebook, Yelp, and more."
         },
         {
-            title: "Can I tailor the widget to my site's style?",
-            desc: "Yes, it's fully customizable. Missing any features you want? We're open to feedback and can quickly adapt the widget to meet your specific needs."
+            title: "How does the screening process work before asking for reviews?",
+            desc: "We ask your customers to rate your service 0-10 on our hosted site. This way we won't show them review links, and instead have them submit feedback privatly on our website intead of Google or Yelp."
         },
         {
-            title: "How do I add the widget to my website?",
-            desc: "Simply paste a script tag into your website's HTML. It's compatible with both hand-coded sites and platforms like Wix."
+            title: "Is the integration process complicated?",
+            desc: "No, our integration is designed to be straightforward. We work directly with your business to integrate with your customer management platform. We can even process spreadsheets / Google sheets."
         },
         {
-            title: "What if I need to update my contact details?",
-            desc: "You can change your widget's information anytime without altering your site's existing setup, and changes will be reflected immediaty."
+            title: "Will my customers be bombarded with review requests?",
+            desc: "No, we never send duplicate requests to the same customer. We keep track of customers we sent requests to and customers that reviewed you already."
         },
         {
-            title: "Will it affect my site's load time?",
-            desc: "No, the widget loads asynchronously, so it won't have any effect your site's speed."
+            title: "What if I have unique needs for review collection and management?",
+            desc: "We custom built this service to have as much flexibility as possilbe. We work directly with each business to tailor our solution to their needs."
         },
         {
-            title: "What if I encounter issues with the widget?",
-            desc: "If an error occurs the widget is invisible, and does not impact your site. Our team is always ready to immeditly fix any issues you encounter."
+            title: "Will my customers see Convosage branding?",
+            desc: "No. We never include any convosage branding in our site, our sites are designed with your logo and brand colors."
         }
     ],
 

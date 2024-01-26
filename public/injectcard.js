@@ -5,7 +5,7 @@
         bottom: 1.25rem;
         right: 0.75rem;
         width: 100%;
-        max-width: 320px; /* Adjust based on your design */
+        max-width: 384px; /* Adjust based on your design */
         border: none; /* Add more styling as needed */
         z-index: 1000;
         padding: 0rem;
