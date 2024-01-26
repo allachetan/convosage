@@ -121,21 +121,21 @@ export default function Card() {
 
                             <h1 className="text-4xl font-semibold mb-4 text-center">Let's boost your online ratings.</h1>
                             <div>
-                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
-                                <input type="email" id="email" name="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@company.com" required />
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                                <input type="email" id="email" name="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="name@company.com" required />
                             </div>
 
                             <div>
-                                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Website</label>
-                                <input type="text" id="subject" name="website" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="https://www.google.com" required />
+                                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900">Website</label>
+                                <input type="text" id="subject" name="website" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 " placeholder="https://www.google.com" required />
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tell us about your business</label>
-                                <textarea id="message" rows="6" name="message" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder=""></textarea>
+                                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900">Tell us about your business</label>
+                                <textarea id="message" rows="6" name="message" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder=""></textarea>
                             </div>
 
-                            <button type="submit" className="mt-2 py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-black">Submit</button>
+                            <button type="submit" className="mt-2 py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-gray-800 sm:w-fit hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-black">Submit</button>
                         </form>
                     )
                 }
