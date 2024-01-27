@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Convosage',
   description: 'Embed personalized contact cards to your website.',
+  icons: "/images/favicon.ico"
 }
 
 export const viewport: Viewport = {
